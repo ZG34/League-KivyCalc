@@ -1,0 +1,110 @@
+<MenuScreen>:
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        Button:
+            text: 'Calculate Damage vs Resists'
+            font_size: self.width/30
+            on_press:
+                root.manager.current = 'resists'
+                root.manager.transition.direction = 'down'
+        Button:
+            text: 'Calculate Effective HP'
+            font_size: self.width/30
+            on_press:
+                root.manager.current = 'ehp'
+                root.manager.transition.direction = 'up'
+
+
+<ResistValScreen>:
+
+    result: result
+    damage: damage
+    resists: resists
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        Label:
+            font_size: self.width/20
+            id: result
+        BoxLayout:
+            Label:
+                text: "Enter Damage: "
+                size_hint: 0.5, 0.5
+                pos_hint: {"y": 0.1}
+                font_size: self.width/8
+            TextInput:
+                id: damage
+                font_size: self.width/4
+                multiline: False
+                input_filter: 'int'
+                size_hint: 0.5, 0.5
+            Label:
+                text: "Enter Resists: "
+                size_hint: 0.5, 0.5
+                pos_hint: {"y": 0.1}
+                font_size: self.width/8
+            TextInput:
+                id: resists
+                font_size: self.width/4
+                multiline: False
+                input_filter: 'int'
+                size_hint: 0.5, 0.5
+        Button:
+            text: 'Calculate'
+            font_size: self.width/30
+            on_press: root.calculate()
+        Button:
+            text: 'Back to menu'
+            font_size: self.width/30
+            on_press:
+                root.manager.current = 'menu'
+                root.manager.transition.direction = 'up'
+
+<EhpScreen>:
+
+    result: result
+    resists: resists
+    health: health
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        Label:
+            id: result
+            font_size: self.width/20
+        BoxLayout:
+            Label:
+                text: "Enter Health: "
+                size_hint: 0.5, 0.5
+                pos_hint: {"y": 0.1}
+                font_size: self.width/8
+            TextInput:
+                id: resists
+                font_size: self.width/4
+                multiline: False
+                input_filter: 'int'
+                size_hint: 0.5, 0.5
+            Label:
+                text: "Enter Resists: "
+                size_hint: 0.5, 0.5
+                pos_hint: {"y": 0.1}
+                font_size: self.width/8
+            TextInput:
+                id: health
+                font_size: self.width/4
+                multiline: False
+                input_filter: 'int'
+                size_hint: 0.5, 0.5
+        Button:
+            text: 'Calculate'
+            font_size: self.width/30
+            on_press: root.calculate()
+        Button:
+            text: 'Back to menu'
+            font_size: self.width/30
+            on_press:
+                root.manager.current = 'menu'
+                root.manager.transition.direction = 'down'
