@@ -1,6 +1,7 @@
 # League Calc
  Small application for figuring some calculations, relating to the game League of Legends.
-
+ 
+<img src="https://i.gyazo.com/43556652d0057a013d143326f6577e87.png" width="300"> <img src="https://i.gyazo.com/2878de0a6f7560377f67f3ecd61746a0.png" width="300">
 
 ### Features
 * Calculate damage taken through resists
